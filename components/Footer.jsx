@@ -35,22 +35,27 @@ export default function Footer() {
       {/* Instagram Section */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <div className="flex items-center justify-center gap-4 text-[11px] tracking-[0.4em] text-white uppercase mb-4">
-              <span className="h-0.5 w-12 bg-[#ED1C24]"></span>
-              <span>OUR INSTAGRAM</span>
-              <span className="h-0.5 w-12 bg-[#ED1C24]"></span>
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="text-[11px] tracking-[0.4em] text-white uppercase mb-4">
+              <span className="relative">
+                OUR
+                <span className="absolute -bottom-2 left-0 h-0.5 w-full bg-[#ED1C24]"></span>
+              </span>
+              <span className="relative">
+                &nbsp;INSTAGRAM
+                <span className="absolute -top-2 left-0 h-0.5 w-full bg-[#ED1C24]"></span>
+              </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-medium">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-medium">
               @autodetail_works
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3">
+          <div className="flex overflow-x-auto gap-0 pb-2 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/40">
             {instagramImages.map((image, index) => (
               <div
                 key={index}
-                className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer"
+                className="relative w-80 h-80 flex-shrink-0 overflow-hidden rounded-lg group cursor-pointer"
               >
                 <Image
                   src={`/our-instagram/${image}`}

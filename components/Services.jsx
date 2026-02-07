@@ -4,32 +4,32 @@ const services = [
   {
     number: '01',
     title: 'Exterior Hand Wash & Wax',
-    image: '/herobackground.webp',
+    image: '/our-services/exterior.webp',
   },
   {
     number: '02',
     title: 'Interior Deep Cleaning',
-    image: '/herobackground.webp',
+    image: '/our-services/interior.webp',
   },
   {
     number: '03',
     title: 'Paint Correction',
-    image: '/herobackground.webp',
+    image: '/our-services/paint.webp',
   },
   {
     number: '04',
     title: 'Ceramic Coating Protection',
-    image: '/herobackground.webp',
+    image: '/our-services/ceramic.webp',
   },
   {
     number: '05',
     title: 'Engine Bay Detailing',
-    image: '/herobackground.webp',
+    image: '/our-services/enigine.webp',
   },
   {
     number: '06',
-    title: 'Wheel & Tire Care',
-    image: '/herobackground.webp',
+    title: 'Headlight Restoration',
+    image: '/our-services/Headlight.webp',
   },
 ]
 
