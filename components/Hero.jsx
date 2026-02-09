@@ -19,7 +19,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 min-h-[600px] lg:min-h-screen flex flex-col justify-center pb-12 pt-28 lg:py-32">
+      <div className="relative z-20 min-h-[600px] lg:min-h-screen flex flex-col justify-center pb-12 pt-40 lg:py-32">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6 lg:space-y-8\">
             {/* Main Heading */}
@@ -29,7 +29,7 @@ export default function Hero() {
 
             {/* Description */}
             <p className="font-manrope text-gray-300 text-base sm:text-lg max-w-2xl mx-auto animate-fade-in">
-              AutoDetail offers efficient, reliable detailing that restores shine and preserves your vehicle.
+              AutoDetail offers efficient, reliable detailing that restores shine <br /> and preserves your vehicle.
             </p>
 
             {/* CTA Button */}
@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
 
           {/* Car Image */}
-          <div className="relative w-full max-w-6xl mx-auto mt-8 lg:mt-12 h-[200px] sm:h-[300px] lg:h-[400px]\">
+          <div className="relative w-full max-w-6xl mx-auto mt-2 lg:mt-12 h-[250px] sm:h-[350px] lg:h-[400px]">
             <Image
               src="/herocar.webp"
               alt="Luxury Car"
