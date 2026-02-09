@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter, Manrope, Oxanium } from 'next/font/google'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const manrope = Manrope({
@@ -18,7 +19,19 @@ const oxanium = Oxanium({
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${inter.variable} ${manrope.variable} ${oxanium.variable}`}>
-            <body className={inter.className}>{children}</body>
+            <head>
+                <link
+                    rel="stylesheet"
+                    href="https://assets.calendly.com/assets/external/widget.css"
+                />
+            </head>
+            <body className={inter.className}>
+                {children}
+                <Script
+                    src="https://assets.calendly.com/assets/external/widget.js"
+                    strategy="afterInteractive"
+                />
+            </body>
         </html>
     )
 }
