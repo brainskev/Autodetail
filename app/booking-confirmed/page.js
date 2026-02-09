@@ -7,12 +7,17 @@ import { Suspense } from 'react'
 function BookingConfirmedContent() {
     const searchParams = useSearchParams()
 
+    // Debug: Log all URL parameters
+    console.log('All URL params:', Object.fromEntries(searchParams.entries()))
+
     // Extract Calendly event details from URL parameters
     const eventName = searchParams.get('event_type_name') || searchParams.get('event')
     const inviteeName = searchParams.get('invitee_full_name') || searchParams.get('name')
     const inviteeEmail = searchParams.get('invitee_email') || searchParams.get('email')
     const eventStartTime = searchParams.get('event_start_time') || searchParams.get('start_time')
     const eventEndTime = searchParams.get('event_end_time') || searchParams.get('end_time')
+
+    console.log('Extracted values:', { eventName, inviteeName, inviteeEmail, eventStartTime })
 
     // Format date/time if available
     const formatDateTime = (isoString) => {
@@ -46,6 +51,16 @@ function BookingConfirmedContent() {
                     Thanks for choosing us. Your detailing slot is reserved. We'll reach out soon to confirm your
                     service and answer any questions.
                 </p>
+
+                {/* Debug info - remove after testing */}
+                <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-xl p-4 mb-6 text-xs">
+                    <p className="font-semibold mb-2">Debug Info (remove after testing):</p>
+                    <p>URL Params: {JSON.stringify(Object.fromEntries(searchParams.entries()))}</p>
+                    <p className="mt-1">Event Name: {eventName || 'not found'}</p>
+                    <p>Invitee Name: {inviteeName || 'not found'}</p>
+                    <p>Email: {inviteeEmail || 'not found'}</p>
+                    <p>Start Time: {eventStartTime || 'not found'}</p>
+                </div>
 
                 {(eventStartTime || eventName || inviteeEmail) && (
                     <div className="bg-[#ED1C24]/10 border border-[#ED1C24]/30 rounded-xl p-5 mb-6">
