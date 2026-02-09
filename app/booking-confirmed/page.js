@@ -52,29 +52,6 @@ function BookingConfirmedContent() {
                     service and answer any questions.
                 </p>
 
-                {/* Debug info - remove after testing */}
-                <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-xl p-4 mb-6 text-xs">
-                    <p className="font-semibold mb-2">Debug Info (remove after testing):</p>
-                    <p>URL Params: {JSON.stringify(Object.fromEntries(searchParams.entries()))}</p>
-                    <p className="mt-1">Event Name: {eventName || 'not found'}</p>
-                    <p>Invitee Name: {inviteeName || 'not found'}</p>
-                    <p>Email: {inviteeEmail || 'not found'}</p>
-                    <p>Start Time: {eventStartTime || 'not found'}</p>
-                </div>
-
-                {(eventStartTime || eventName || inviteeEmail) && (
-                    <div className="bg-[#ED1C24]/10 border border-[#ED1C24]/30 rounded-xl p-5 mb-6">
-                        <p className="text-sm font-semibold mb-3 text-[#ED1C24]">Appointment Details</p>
-                        <div className="text-sm text-white/90 space-y-2">
-                            {eventName && <p><span className="text-white/60">Service:</span> {eventName}</p>}
-                            {eventStartTime && (
-                                <p><span className="text-white/60">Date & Time:</span> {formatDateTime(eventStartTime)}</p>
-                            )}
-                            {inviteeEmail && <p><span className="text-white/60">Email:</span> {inviteeEmail}</p>}
-                        </div>
-                    </div>
-                )}
-
                 <div className="bg-[#121212] border border-white/10 rounded-xl p-5 mb-6">
                     <p className="text-sm font-semibold mb-3">To help us serve you faster:</p>
                     <ul className="text-sm text-white/70 space-y-2">
