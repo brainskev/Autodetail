@@ -6,6 +6,7 @@ import AboutUs from '@/components/AboutUs'
 import Testimonials from '@/components/Testimonials'
 import WhyChooseUsFAQSection from '@/components/WhyChooseUsFAQSection'
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
             <Testimonials />
             <WhyChooseUsFAQSection />
             <Footer />
+            <WhatsAppButton />
         </main>
     )
 }

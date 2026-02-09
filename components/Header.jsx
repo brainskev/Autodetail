@@ -36,8 +36,8 @@ export default function Header() {
             <span>Get 50% Discount for AutoDetail New Member</span>
           </div>
           <div className="flex items-center gap-6 text-gray-400">
-            <a href="tel:+18009876654" className="hover:text-white transition-colors flex items-center gap-1">
-              <span>📞</span> Call us: +1 800 987 6654
+            <a href="tel:+254114347091" className="hover:text-white transition-colors flex items-center gap-1">
+              <span>📞</span> Call us: +254 114 347 091
             </a>
             <a href="mailto:support@autodetail.com" className="hover:text-white transition-colors hidden sm:flex items-center gap-1">
               <span>✉️</span> Message us: support@autodetail.com
@@ -121,17 +121,17 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-dark z-40 lg:hidden transition-transform duration-300 ${
+        className={`fixed top-[80px] left-0 right-0 bottom-0 bg-[#0a0a0a]/98 backdrop-blur-sm z-40 lg:hidden transition-transform duration-300 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="flex flex-col items-center justify-start pt-12 h-full space-y-6 overflow-y-auto">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-white text-2xl font-medium uppercase hover:text-primary transition-colors"
+              className="text-white text-xl font-manrope font-medium uppercase hover:text-[#ED1C24] transition-colors"
             >
               {link.name}
             </a>
