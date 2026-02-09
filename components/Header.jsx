@@ -51,11 +51,11 @@ export default function Header() {
           isScrolled ? 'bg-dark shadow-lg' : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-between h-[70px] lg:h-[85px]">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10\">
+          <div className="flex items-center justify-between h-[80px] lg:h-[95px]">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="block relative w-36 h-14 sm:w-40 sm:h-14 lg:w-44 lg:h-16">
+              <a href="#" className="block relative w-40 h-16 sm:w-44 sm:h-16 lg:w-52 lg:h-20">
                 <Image
                   src="/logo-white.webp"
                   alt="Auto Detail"

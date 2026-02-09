@@ -3,7 +3,7 @@ import CalendlyTrigger from './CalendlyTrigger'
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative w-full min-h-[600px] lg:min-h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -18,39 +18,38 @@ export default function Hero() {
         <div className="absolute inset-0 bg-dark/60"></div>
       </div>
 
-      {/* Car Image - Positioned at center bottom */}
-      <div className="absolute bottom-24 sm:bottom-16 lg:bottom-28 left-1/2 -translate-x-1/2 w-full px-4 max-w-3xl sm:max-w-4xl md:max-w-5xl lg:max-w-6xl h-[28%] sm:h-[36%] md:h-[45%] lg:h-[50%] z-10">
-        <div className="relative w-full h-full">
-          <Image
-            src="/herocar.webp"
-            alt="Luxury Car"
-            fill
-            className="object-contain object-bottom"
-            priority
-            quality={100}
-            style={{ objectFit: 'contain' }}
-          />
-        </div>
-      </div>
-
       {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 relative z-20 -mt-40 sm:-mt-32 lg:-mt-72">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Heading */}
-          <h1 className="text-white font-heading font-medium text-[32px] leading-[1.2] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] lg:leading-[1.15] mb-4 md:mb-6 animate-slide-up uppercase tracking-wide">
-            Where Every Detail<br />Truly Matters
-          </h1>
+      <div className="relative z-20 min-h-[600px] lg:min-h-screen flex flex-col justify-center pb-12 pt-40 lg:py-32">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center space-y-6 lg:space-y-8\">
+            {/* Main Heading */}
+            <h1 className="text-white font-heading font-medium text-[32px] leading-tight sm:text-5xl md:text-6xl lg:text-7xl animate-slide-up uppercase tracking-wide">
+              Where Every Detail<br />Truly Matters
+            </h1>
 
-          {/* Description */}
-          <p className="font-manrope font-normal text-gray-300 text-[16px] leading-[28px] tracking-normal mb-6 md:mb-10 max-w-2xl mx-auto animate-fade-in">
-            AutoDetail offers efficient, reliable detailing that restores shine<br className="hidden md:block" /> and preserves your vehicle.
-          </p>
+            {/* Description */}
+            <p className="font-manrope text-gray-300 text-base sm:text-lg max-w-2xl mx-auto animate-fade-in">
+              AutoDetail offers efficient, reliable detailing that restores shine <br /> and preserves your vehicle.
+            </p>
 
-          {/* CTA Button */}
-          <div className="flex justify-center animate-slide-up">
-            <CalendlyTrigger className="inline-block bg-[#ED1C24] hover:bg-[#d91920] text-white px-7 py-3 md:px-8 md:py-3.5 text-[12px] md:text-[13px] font-semibold uppercase tracking-wide transition-all duration-300 hover:shadow-xl hover:shadow-red-600/30 rounded-md">
-              Make Appointment
-            </CalendlyTrigger>
+            {/* CTA Button */}
+            <div className="flex justify-center animate-slide-up pt-2">
+              <CalendlyTrigger className="bg-[#ED1C24] hover:bg-[#d91920] text-white px-8 py-3 text-xs font-semibold uppercase tracking-wide transition-all duration-300 hover:shadow-xl hover:shadow-red-600/30 rounded-md">
+                Make Appointment
+              </CalendlyTrigger>
+            </div>
+          </div>
+
+          {/* Car Image */}
+          <div className="relative w-full max-w-6xl mx-auto mt-2 lg:mt-12 h-[250px] sm:h-[350px] lg:h-[400px]">
+            <Image
+              src="/herocar.webp"
+              alt="Luxury Car"
+              fill
+              className="object-contain object-bottom"
+              priority
+              quality={100}
+            />
           </div>
         </div>
       </div>
