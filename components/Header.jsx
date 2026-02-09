@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import CalendlyTrigger from './CalendlyTrigger'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -85,12 +86,9 @@ export default function Header() {
 
             {/* Right Side - CTA Button */}
             <div className="hidden lg:flex items-center">
-              <a
-                href="#contact"
-                className="bg-[#ED1C24] hover:bg-[#d91920] text-white px-7 py-3 text-[12px] font-semibold uppercase tracking-wide transition-all duration-300 rounded-md"
-              >
+              <CalendlyTrigger className="bg-[#ED1C24] hover:bg-[#d91920] text-white px-7 py-3 text-[12px] font-semibold uppercase tracking-wide transition-all duration-300 rounded-md">
                 Make Appointment
-              </a>
+              </CalendlyTrigger>
             </div>
 
             {/* Mobile Menu Button */}
@@ -138,13 +136,12 @@ export default function Header() {
               {link.name}
             </a>
           ))}
-          <a
-            href="#contact"
+          <CalendlyTrigger
             onClick={() => setIsMobileMenuOpen(false)}
             className="bg-[#ED1C24] hover:bg-[#d91920] text-white px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide transition-all duration-300 mt-4 rounded-md"
           >
             Make Appointment
-          </a>
+          </CalendlyTrigger>
         </div>
       </div>
     </>

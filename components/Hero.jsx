@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import CalendlyTrigger from './CalendlyTrigger'
 
 export default function Hero() {
   return (
@@ -47,12 +48,9 @@ export default function Hero() {
 
           {/* CTA Button */}
           <div className="flex justify-center animate-slide-up">
-            <a
-              href="#contact"
-              className="inline-block bg-[#ED1C24] hover:bg-[#d91920] text-white px-7 py-3 md:px-8 md:py-3.5 text-[12px] md:text-[13px] font-semibold uppercase tracking-wide transition-all duration-300 hover:shadow-xl hover:shadow-red-600/30 rounded-md"
-            >
+            <CalendlyTrigger className="inline-block bg-[#ED1C24] hover:bg-[#d91920] text-white px-7 py-3 md:px-8 md:py-3.5 text-[12px] md:text-[13px] font-semibold uppercase tracking-wide transition-all duration-300 hover:shadow-xl hover:shadow-red-600/30 rounded-md">
               Make Appointment
-            </a>
+            </CalendlyTrigger>
           </div>
         </div>
       </div>

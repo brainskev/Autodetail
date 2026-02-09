@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import CalendlyTrigger from './CalendlyTrigger'
 
 const testimonials = [
   {
@@ -172,9 +173,9 @@ export default function Testimonials() {
           <h3 className="text-xl sm:text-2xl font-semibold text-white">
             Want your car to shine like new again?
           </h3>
-          <button className="border border-white/50 text-white px-6 py-2.5 rounded text-sm font-semibold hover:bg-white/10 transition-colors">
+          <CalendlyTrigger className="border border-white/50 text-white px-6 py-2.5 rounded text-sm font-semibold hover:bg-white/10 transition-colors">
             Make Appointment
-          </button>
+          </CalendlyTrigger>
         </div>
       </div>
     </section>
