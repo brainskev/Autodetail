@@ -50,10 +50,10 @@ export default function Services() {
               </span>
             </div>
           </div>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-heading font-medium">
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-heading font-medium uppercase">
             Premium Car Detailing
           </h2>
-          <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed font-manrope">
             From deep interior cleaning to long-lasting ceramic coating, we restore and protect your
             vehicle with precision, care, and a commitment to perfection.
           </p>
@@ -82,7 +82,7 @@ export default function Services() {
                   <span className="text-2xl sm:text-3xl font-semibold text-white/90">
                     {service.number}
                   </span>
-                  <span className="text-sm sm:text-base font-semibold tracking-wide">
+                  <span className="text-sm sm:text-base font-manrope font-semibold tracking-wide">
                     {service.title}
                   </span>
                 </div>
