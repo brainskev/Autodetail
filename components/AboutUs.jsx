@@ -43,30 +43,30 @@ const stats = [
 
 export default function AboutUs() {
   return (
-    <section className="bg-[#2a2a2a] text-white py-16 sm:py-20">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="bg-[#2a2a2a] text-white py-16 sm:py-20 lg:py-24">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 lg:gap-12 items-center">
           {/* Left side - Images */}
-          <div className="flex gap-4 sm:gap-6">
+          <div className="flex gap-4 md:gap-5 lg:gap-6">
             <div className="flex-1">
-              <div className="relative overflow-hidden rounded-lg sm:rounded-2xl h-64 sm:h-80 md:h-96">
+              <div className="relative overflow-hidden rounded-lg sm:rounded-2xl h-64 sm:h-72 md:h-80 lg:h-96">
                 <Image
                   src="/about-us/p1-759x1024.webp"
                   alt="Car detailing service"
                   fill
                   className="object-cover"
-                  sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 100vw"
+                  sizes="(min-width: 1024px) 280px, (min-width: 768px) 45vw, 100vw"
                 />
               </div>
             </div>
-            <div className="flex-1 sm:translate-y-4 md:translate-y-6">
-              <div className="relative overflow-hidden rounded-lg sm:rounded-2xl h-64 sm:h-80 md:h-96">
+            <div className="flex-1 sm:translate-y-4 md:translate-y-5 lg:translate-y-6">
+              <div className="relative overflow-hidden rounded-lg sm:rounded-2xl h-64 sm:h-72 md:h-80 lg:h-96">
                 <Image
                   src="/about-us/p2-759x1024.webp"
                   alt="Car detailing service"
                   fill
                   className="object-cover"
-                  sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 100vw"
+                  sizes="(min-width: 1024px) 280px, (min-width: 768px) 45vw, 100vw"
                 />
               </div>
             </div>
@@ -87,31 +87,31 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-medium mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-[2.5rem] lg:text-5xl font-heading font-medium mb-5 md:mb-6 leading-tight">
               Restoring Lasting Shine, Inside and Out
             </h2>
 
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-8">
+            <p className="text-gray-400 text-sm md:text-[15px] lg:text-base leading-relaxed mb-6 md:mb-8">
               At AutoDetail, we're passionate about making every vehicle look its absolute best – inside and out. From restoring showroom-level gloss to deep-cleaning interiors, our expert team delivers flawless results with care and precision.
             </p>
 
-            <button className="bg-[#ED1C24] hover:bg-[#c71620] text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded text-sm sm:text-base transition-colors">
+            <button className="bg-[#ED1C24] hover:bg-[#c71620] text-white font-semibold px-6 md:px-7 lg:px-8 py-2.5 md:py-3 rounded text-sm transition-colors">
               Read More
             </button>
           </div>
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="mt-14 md:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-[#ED1C24] mb-3 sm:mb-4 flex justify-center">
+              <div className="text-[#ED1C24] mb-3 md:mb-4 flex justify-center">
                 {stat.icon}
               </div>
-              <div className="text-3xl sm:text-4xl font-semibold mb-2 font-oxanium">
+              <div className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold mb-2 font-oxanium">
                 {stat.number}
               </div>
-              <p className="text-gray-400 text-xs sm:text-sm">
+              <p className="text-gray-400 text-xs md:text-sm">
                 {stat.label}
               </p>
             </div>

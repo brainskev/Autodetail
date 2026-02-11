@@ -51,11 +51,11 @@ export default function Header() {
           isScrolled ? 'bg-dark shadow-lg' : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-4 lg:px-8 relative z-10\">
-          <div className="flex items-center justify-between h-[80px] lg:h-[95px]">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="flex items-center justify-between h-[80px] md:h-[85px] lg:h-[95px]">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#" className="block relative w-40 h-16 sm:w-44 sm:h-16 lg:w-52 lg:h-20">
+              <a href="#" className="block relative w-40 h-16 sm:w-44 sm:h-16 md:w-48 md:h-18 lg:w-52 lg:h-20">
                 <Image
                   src="/logo-white.webp"
                   alt="Auto Detail"
@@ -67,12 +67,12 @@ export default function Header() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-9 xl:space-x-11" aria-label="Main navigation">
+            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-9 2xl:space-x-11" aria-label="Main navigation">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-white text-[15px] font-normal hover:text-primary transition-colors duration-300 flex items-center gap-1.5"
+                  className="text-white text-[14px] xl:text-[15px] font-normal hover:text-primary transition-colors duration-300 flex items-center gap-1.5"
                 >
                   {link.name}
                   {link.hasDropdown && (
@@ -86,7 +86,7 @@ export default function Header() {
 
             {/* Right Side - CTA Button */}
             <div className="hidden lg:flex items-center">
-              <CalendlyTrigger className="bg-[#ED1C24] hover:bg-[#d91920] text-white px-7 py-3 text-[12px] font-semibold uppercase tracking-wide transition-all duration-300 rounded-md">
+              <CalendlyTrigger className="bg-[#ED1C24] hover:bg-[#d91920] text-white px-5 xl:px-7 py-2.5 xl:py-3 text-[11px] xl:text-[12px] font-semibold uppercase tracking-wide transition-all duration-300 rounded-md">
                 Make Appointment
               </CalendlyTrigger>
             </div>

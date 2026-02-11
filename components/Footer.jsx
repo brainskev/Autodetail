@@ -33,9 +33,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#222222] text-white">
       {/* Instagram Section */}
-      <section className="py-16 sm:py-20 lg:py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
+      <section className="py-14 sm:py-16 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-12 lg:mb-16">
             <div className="text-[11px] tracking-[0.4em] text-white uppercase mb-4">
               <span className="relative">
                 OUR
@@ -46,7 +46,7 @@ export default function Footer() {
                 <span className="absolute -top-2 left-0 h-0.5 w-full bg-[#ED1C24]"></span>
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-medium">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium">
               @autodetail_works
             </h2>
           </div>
@@ -55,7 +55,7 @@ export default function Footer() {
             {instagramImages.map((image, index) => (
               <div
                 key={index}
-                className="relative w-80 h-80 flex-shrink-0 overflow-hidden rounded-lg group cursor-pointer"
+                className="relative w-60 md:w-72 lg:w-80 h-60 md:h-72 lg:h-80 flex-shrink-0 overflow-hidden rounded-lg group cursor-pointer"
               >
                 <Image
                   src={`/our-instagram/${image}`}
@@ -80,10 +80,10 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 lg:px-8 py-12 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-10 sm:py-12 md:py-14 lg:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 lg:gap-10 xl:gap-12">
             {/* Company Info */}
-            <div className="lg:col-span-1">
+            <div className="sm:col-span-2 md:col-span-1 lg:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <svg className="w-8 h-8 text-[#ED1C24]" viewBox="0 0 40 40" fill="currentColor">
                   <path d="M20 2L4 10v10c0 10 6 18 16 20 10-2 16-10 16-20V10L20 2zm0 6l12 6v8c0 7.5-4.5 13.5-12 15-7.5-1.5-12-7.5-12-15v-8l12-6z"/>
@@ -91,10 +91,10 @@ export default function Footer() {
                 </svg>
                 <span className="text-xl font-heading font-semibold">AutoDetail</span>
               </div>
-              <p className="text-sm text-gray-400 leading-relaxed mb-6 font-manrope">
+              <p className="text-sm text-gray-400 leading-relaxed mb-5 md:mb-6 font-manrope">
                 At AutoDetail, we're dedicated to providing professional, high-quality car detailing services. From routine hand washes to advanced ceramic coatings, we help keep your vehicle looking its best while preserving its value and protecting it from the elements.
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 md:gap-3">
                 <Link href="https://www.facebook.com/share/1KGT6vnXZs/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-md bg-[#1a1a1a] hover:bg-[#ED1C24] transition-colors flex items-center justify-center">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>

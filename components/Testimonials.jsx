@@ -90,9 +90,9 @@ export default function Testimonials() {
 
   return (
     <section className="bg-[#121212] text-white py-20 sm:py-24 lg:py-28">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center text-center">
-          <div className="lg:col-span-1 w-full">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-16 items-center text-center md:text-left">
+          <div className="md:col-span-1 w-full">
             <div className="mb-4">
               <div className="inline-block text-[11px] tracking-[0.4em] text-white uppercase">
                 <span className="relative">
@@ -105,21 +105,21 @@ export default function Testimonials() {
                 </span>
               </div>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-heading font-medium leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-heading font-medium leading-tight">
               What They Says
             </h2>
           </div>
 
-          <div className="lg:col-span-2 w-full">
+          <div className="md:col-span-2 w-full">
             <div
               ref={scrollerRef}
-              className="grid grid-flow-col auto-cols-[100%] sm:auto-cols-[100%] md:auto-cols-[calc(50%-12px)] lg:auto-cols-[calc(50%-16px)] gap-6 md:gap-8 w-full overflow-x-auto snap-x snap-mandatory pb-2"
+              className="grid grid-flow-col auto-cols-[100%] md:auto-cols-[calc(50%-12px)] lg:auto-cols-[calc(50%-16px)] gap-5 md:gap-6 lg:gap-8 w-full overflow-x-auto snap-x snap-mandatory pb-2"
             >
               {testimonials.map((item, index) => (
                 <div
                   key={`${item.name}-${index}`}
                   data-card="true"
-                  className="bg-[#2a2a2a] border border-white/5 rounded-2xl p-7 sm:p-8 shadow-[0_16px_40px_rgba(0,0,0,0.4)] min-h-[240px] sm:min-h-[260px] w-full snap-start"
+                  className="bg-[#2a2a2a] border border-white/5 rounded-2xl p-6 md:p-7 lg:p-8 shadow-[0_16px_40px_rgba(0,0,0,0.4)] min-h-[220px] md:min-h-[240px] lg:min-h-[260px] w-full snap-start"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -168,12 +168,12 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="mt-16 bg-[#ED1C24]">
-        <div className="container mx-auto px-4 lg:px-8 py-10 sm:py-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <h3 className="text-xl sm:text-2xl font-semibold text-white">
+      <div className="mt-14 md:mt-16 bg-[#ED1C24]">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-10 lg:py-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white text-center sm:text-left">
             Want your car to shine like new again?
           </h3>
-          <CalendlyTrigger className="border border-white/50 text-white px-6 py-2.5 rounded text-sm font-semibold hover:bg-white/10 transition-colors">
+          <CalendlyTrigger className="border border-white/50 text-white px-5 md:px-6 py-2.5 rounded text-sm font-semibold hover:bg-white/10 transition-colors whitespace-nowrap">
             Make Appointment
           </CalendlyTrigger>
         </div>

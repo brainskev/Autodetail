@@ -13,19 +13,19 @@ const logos = [
 
 export default function LogoSlider() {
   return (
-    <section className="bg-[#121212] py-10 sm:py-12">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="bg-[#121212] py-8 sm:py-10 md:py-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-10 sm:gap-14 lg:gap-20 animate-marquee">
+          <div className="flex items-center gap-8 sm:gap-10 md:gap-14 lg:gap-16 xl:gap-20 animate-marquee">
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex items-center justify-center min-w-[140px] sm:min-w-[160px] lg:min-w-[180px]"
+                className="flex items-center justify-center min-w-[120px] sm:min-w-[140px] md:min-w-[150px] lg:min-w-[160px] xl:min-w-[180px]"
               >
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="max-h-14 sm:max-h-16 lg:max-h-20 w-auto object-contain"
+                  className="max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-18 xl:max-h-20 w-auto object-contain"
                 />
               </div>
             ))}
