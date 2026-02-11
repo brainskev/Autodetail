@@ -53,7 +53,7 @@ export default function WhyChooseUsFAQSection() {
 
   return (
     <div className="relative">
-      <section className="bg-[#121212] text-white py-16 sm:py-20 md:py-24 lg:py-28">
+      <section className="bg-[#121212] text-white pt-10 pb-14 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 lg:pt-16 lg:pb-24">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="mb-6 md:mb-8 lg:mb-10 text-center">
             <div className="inline-block text-[11px] tracking-[0.4em] text-white uppercase mb-3 font-manrope">
