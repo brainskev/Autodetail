@@ -53,9 +53,9 @@ export default function WhyChooseUsFAQSection() {
 
   return (
     <div className="relative">
-      <section className="bg-[#121212] text-white py-20 sm:py-24 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="mb-8 lg:mb-10 text-center">
+      <section className="bg-[#121212] text-white py-16 sm:py-20 md:py-24 lg:py-28">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="mb-6 md:mb-8 lg:mb-10 text-center">
             <div className="inline-block text-[11px] tracking-[0.4em] text-white uppercase mb-3 font-manrope">
               <span className="relative">
                 TRUSTED
@@ -68,25 +68,25 @@ export default function WhyChooseUsFAQSection() {
             </div>
           </div>
 
-          <div className="max-w-4xl mb-4 text-center mx-auto">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-medium leading-tight mb-4">
+          <div className="max-w-3xl lg:max-w-4xl mb-4 text-center mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium leading-tight mb-4">
               Why Choose Our Car Detailing?
             </h2>
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed font-manrope">
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-manrope">
               From deep interior cleaning to long-lasting ceramic coating, we restore and protect your vehicle with precision, care, and a commitment to perfection.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-8">
             {whyChooseUsItems.map((item, index) => (
               <div
                 key={`${item.title}-${index}`}
-                className="bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 sm:p-7 shadow-[0_16px_40px_rgba(0,0,0,0.4)] min-h-[200px]"
+                className="bg-[#1a1a1a]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-5 sm:p-6 md:p-7 shadow-[0_16px_40px_rgba(0,0,0,0.4)] min-h-[180px] md:min-h-[190px] lg:min-h-[200px]"
               >
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 font-manrope">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 md:mb-3 font-manrope">
                   {item.title}
                 </h3>
-                <p className="text-[14px] leading-[28px] tracking-normal font-normal font-manrope text-gray-400">
+                <p className="text-[13px] md:text-[14px] leading-[26px] md:leading-[28px] tracking-normal font-normal font-manrope text-gray-400">
                   {item.description}
                 </p>
               </div>
@@ -96,15 +96,15 @@ export default function WhyChooseUsFAQSection() {
       </section>
 
       {/* Fixed background window between sections */}
-      <div className="relative h-[280px] sm:h-[360px] lg:h-[460px] overflow-hidden">
+      <div className="relative h-[240px] sm:h-[300px] md:h-[380px] lg:h-[460px] overflow-hidden">
         <div className="absolute inset-0 bg-[url('/why-choose-us.webp')] bg-cover bg-center bg-fixed" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0b] via-transparent to-[#0b0b0b]" />
       </div>
 
-      <section className="bg-[#0b0b0b] text-white py-20 sm:py-24 lg:py-28">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-12 lg:gap-16 items-start">
-            <div className="lg:col-span-1">
+      <section className="bg-[#0b0b0b] text-white py-16 sm:py-20 md:py-24 lg:py-28">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] lg:grid-cols-[400px_1fr] xl:grid-cols-[480px_1fr] gap-8 md:gap-10 lg:gap-16 items-start">
+            <div>
               <div className="mb-4">
                 <div className="inline-block text-[11px] tracking-[0.4em] text-white uppercase">
                   <span className="relative">
@@ -117,13 +117,13 @@ export default function WhyChooseUsFAQSection() {
                   </span>
                 </div>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-medium leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium leading-tight">
                 Frequently Asked Questions
               </h2>
             </div>
 
-            <div className="lg:col-span-1">
-              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/30">
+            <div>
+              <div className="space-y-3 md:space-y-4 max-h-[280px] sm:max-h-[300px] md:max-h-[320px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent hover:scrollbar-thumb-white/30">
                 {faqItems.map((item, index) => (
                   <div
                     key={index}
