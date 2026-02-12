@@ -84,19 +84,19 @@ export default function InvoicePrint({ data }) {
           <table className="w-full">
             <thead>
               <tr className="border-b-2 border-primary">
-                <th className="text-left py-4 print:py-3 font-heading font-bold text-secondary uppercase text-sm">Description</th>
-                <th className="text-center py-4 print:py-3 font-heading font-bold text-secondary uppercase text-sm w-20 sm:w-24">Qty</th>
-                <th className="text-right py-4 print:py-3 font-heading font-bold text-secondary uppercase text-sm w-32 sm:w-40">Price</th>
-                <th className="text-right py-4 print:py-3 font-heading font-bold text-secondary uppercase text-sm w-32 sm:w-40">Amount</th>
+                <th className="text-left py-5 print:py-3 font-heading font-bold text-secondary uppercase text-base">Description</th>
+                <th className="text-center py-5 print:py-3 font-heading font-bold text-secondary uppercase text-base w-20 sm:w-24">Qty</th>
+                <th className="text-right py-5 print:py-3 font-heading font-bold text-secondary uppercase text-base w-32 sm:w-40">Price</th>
+                <th className="text-right py-5 print:py-3 font-heading font-bold text-secondary uppercase text-base w-32 sm:w-40">Amount</th>
               </tr>
             </thead>
             <tbody>
               {data.items.map((item, index) => (
                 <tr key={index} className="border-b border-border">
-                  <td className="py-4 print:py-3 font-manrope text-gray-700 text-base print:text-sm">{item.description}</td>
-                  <td className="py-4 print:py-3 text-center font-manrope text-gray-700 text-base print:text-sm">{item.quantity}</td>
-                  <td className="py-4 print:py-3 text-right font-manrope text-gray-700 text-base print:text-sm">{item.price.toLocaleString()}</td>
-                  <td className="py-4 print:py-3 text-right font-semibold text-secondary font-manrope text-base print:text-sm">
+                  <td className="py-5 print:py-3 font-manrope text-gray-700 text-lg print:text-sm">{item.description}</td>
+                  <td className="py-5 print:py-3 text-center font-manrope text-gray-700 text-lg print:text-sm">{item.quantity}</td>
+                  <td className="py-5 print:py-3 text-right font-manrope text-gray-700 text-lg print:text-sm">{item.price.toLocaleString()}</td>
+                  <td className="py-5 print:py-3 text-right font-semibold text-secondary font-manrope text-lg print:text-sm">
                     {(item.quantity * item.price).toLocaleString()}
                   </td>
                 </tr>
@@ -125,7 +125,7 @@ export default function InvoicePrint({ data }) {
 
         {/* Notes */}
         {data.notes && (
-          <div className="mt-8 sm:mt-10 print:mt-6 p-5 sm:p-6 print:p-5 bg-light rounded-lg">
+          <div className="mt-6 sm:mt-8 print:mt-6 p-5 sm:p-6 print:p-5 bg-light rounded-lg">
             <h3 className="font-heading font-bold text-secondary mb-3 text-base print:text-sm">Notes:</h3>
             <p className="text-gray-600 font-manrope text-base print:text-sm">{data.notes}</p>
           </div>
@@ -133,6 +133,15 @@ export default function InvoicePrint({ data }) {
 
         {/* Footer */}
         <div className="mt-10 sm:mt-12 print:mt-8 pt-6 sm:pt-8 print:pt-5 border-t border-border text-center">
+          <div className="mb-6 p-5 sm:p-6 bg-light rounded-lg border border-border">
+            <h4 className="font-heading font-bold text-secondary mb-3 text-base">Payment Information</h4>
+            <div className="space-y-2 text-left sm:max-w-md sm:mx-auto">
+              <p className="font-manrope text-sm text-gray-700">
+                <span className="font-semibold text-secondary">M-Pesa:</span> Buy Goods Number <span className="font-bold text-primary">1160887</span>
+              </p>
+              <p className="font-manrope text-sm text-gray-600">Name: Shift-up Auto Detailing</p>
+            </div>
+          </div>
           <p className="text-gray-500 font-manrope text-base print:text-sm mb-2">
             Thank you for choosing Shift-up Auto Detailing!
           </p>

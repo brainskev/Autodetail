@@ -90,7 +90,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                 name="invoiceNumber"
                 value={formData.invoiceNumber}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 required
               />
             </div>
@@ -103,7 +103,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                 name="date"
                 value={formData.date}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 required
               />
             </div>
@@ -124,7 +124,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                   name="customerName"
                   value={formData.customerName}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                   required
                 />
               </div>
@@ -137,7 +137,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                   name="customerEmail"
                   value={formData.customerEmail}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
               </div>
               <div>
@@ -149,7 +149,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                   name="customerPhone"
                   value={formData.customerPhone}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
               </div>
               <div>
@@ -161,7 +161,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                   name="customerAddress"
                   value={formData.customerAddress}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                   required
                 />
               </div>
@@ -198,7 +198,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                           handleItemChange(index, 'description', '')
                         }
                       }}
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm sm:text-base bg-white"
+                      className="w-full px-4 py-3 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-base sm:text-base bg-white"
                     >
                       <option value="">Select a service or enter custom below...</option>
                       {SERVICES.map((service) => (
@@ -217,7 +217,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                       placeholder="Enter custom service name"
                       value={item.description}
                       onChange={(e) => handleItemChange(index, 'description', e.target.value)}
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm sm:text-base"
+                      className="w-full px-4 py-3 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-base sm:text-base"
                       required
                     />
                   </div>
@@ -231,7 +231,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                         placeholder="Qty"
                         value={item.quantity}
                         onChange={(e) => handleItemChange(index, 'quantity', parseInt(e.target.value) || 1)}
-                        className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm sm:text-base"
+                        className="w-full px-4 py-3 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-base sm:text-base"
                         min="1"
                         required
                       />
@@ -245,7 +245,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                         placeholder="Price"
                         value={item.price}
                         onChange={(e) => handleItemChange(index, 'price', parseFloat(e.target.value) || 0)}
-                        className="w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm sm:text-base"
+                        className="w-full px-4 py-3 sm:px-4 sm:py-3 rounded-lg border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-base sm:text-base"
                         min="0"
                         step="0.01"
                         required
@@ -255,7 +255,7 @@ export default function InvoiceGenerator({ onGenerate }) {
                       <label className="block text-xs font-semibold text-secondary mb-2 font-heading">
                         Total
                       </label>
-                      <div className="px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-lg border border-border text-right font-semibold text-secondary text-sm sm:text-base">
+                      <div className="px-4 py-3 sm:px-4 sm:py-3 bg-white rounded-lg border border-border text-right font-semibold text-secondary text-base sm:text-base">
                         {(item.quantity * item.price).toLocaleString()}
                       </div>
                     </div>
@@ -289,7 +289,7 @@ export default function InvoiceGenerator({ onGenerate }) {
               value={formData.notes}
               onChange={handleInputChange}
               rows="3"
-              className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+              className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
               placeholder="Add any additional notes or terms..."
             />
           </div>
