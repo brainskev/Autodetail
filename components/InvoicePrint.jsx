@@ -79,7 +79,7 @@ export default function InvoicePrint({ data }) {
       </div>
 
       {/* Items Table */}
-      <div className="p-7 sm:p-9 print:p-6">
+      <div className="p-7 sm:p-9 print:p-6 invoice-table">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
@@ -106,7 +106,7 @@ export default function InvoicePrint({ data }) {
         </div>
 
         {/* Total Section */}
-        <div className="mt-8 sm:mt-10 print:mt-6 flex justify-end">
+        <div className="mt-8 sm:mt-10 print:mt-6 flex justify-end invoice-totals">
           <div className="w-full sm:w-96 print:w-80">
             <div className="flex justify-between items-center p-5 print:p-4 bg-light rounded-t-xl print:rounded-t-lg">
               <span className="font-heading font-semibold text-secondary text-base print:text-sm">Subtotal:</span>
@@ -132,7 +132,7 @@ export default function InvoicePrint({ data }) {
         )}
 
         {/* Footer */}
-        <div className="mt-10 sm:mt-12 print:mt-8 pt-6 sm:pt-8 print:pt-5 border-t border-border text-center">
+        <div className="mt-10 sm:mt-12 print:mt-8 pt-6 sm:pt-8 print:pt-5 border-t border-border text-center invoice-footer">
           <div className="mb-6 p-5 sm:p-6 bg-light rounded-lg border border-border">
             <h4 className="font-heading font-bold text-secondary mb-3 text-base">Payment Information</h4>
             <div className="space-y-2 text-left sm:max-w-md sm:mx-auto">
