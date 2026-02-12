@@ -154,4 +154,30 @@
     border-bottom-left-radius: 0.5rem !important;
     border-bottom-right-radius: 0.5rem !important;
   }
+
+  .print\:avoid-page-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Invoice specific print rules */
+  .invoice-table {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .invoice-table tbody tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .invoice-totals {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
+
+  .invoice-footer {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+  }
 }

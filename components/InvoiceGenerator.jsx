@@ -11,9 +11,11 @@ const SERVICES = [
   { id: 6, name: 'Headlight Restoration', price: 10000 },
 ]
 
+const generateInvoiceNumber = () => `INV-${Date.now().toString().slice(-6)}`
+
 export default function InvoiceGenerator({ onGenerate }) {
   const [formData, setFormData] = useState({
-    invoiceNumber: `INV-${Date.now().toString().slice(-6)}`,
+    invoiceNumber: generateInvoiceNumber(),
     date: new Date().toISOString().split('T')[0],
     customerName: '',
     customerEmail: '',
@@ -22,6 +24,8 @@ export default function InvoiceGenerator({ onGenerate }) {
     items: [{ description: '', quantity: 1, price: 10000 }],
     notes: ''
   })
+
+  const [errors, setErrors] = useState({})
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -45,6 +49,20 @@ export default function InvoiceGenerator({ onGenerate }) {
   }
 
   const addItem = () => {
+    // Validate that the last item has at least a description
+    const lastItem = formData.items[0]
+    if (!lastItem.description.trim()) {
+      setErrors(prev => ({
+        ...prev,
+        item: 'Please fill in the service description for the current item before adding a new one'
+      }))
+      return
+    }
+    setErrors(prev => {
+      const newErrors = { ...prev }
+      delete newErrors.item
+      return newErrors
+    })
     setFormData(prev => ({
       ...prev,
       items: [{ description: '', quantity: 1, price: 10000 }, ...prev.items]
@@ -66,6 +84,44 @@ export default function InvoiceGenerator({ onGenerate }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const newErrors = {}
+
+    // Validate invoice number
+    if (!formData.invoiceNumber.trim()) {
+      newErrors.invoiceNumber = 'Invoice number is required'
+    }
+
+    // Validate customer name
+    if (!formData.customerName.trim()) {
+      newErrors.customerName = 'Customer name is required'
+    }
+
+    // Validate customer address
+    if (!formData.customerAddress.trim()) {
+      newErrors.customerAddress = 'Customer address is required'
+    }
+
+    // Validate at least one item is filled
+    const hasValidItem = formData.items.some(item => item.description.trim() && item.quantity > 0 && item.price > 0)
+    if (!hasValidItem) {
+      newErrors.items = 'Please add at least one service with description, quantity, and price'
+    }
+
+    // Check all items are properly filled
+    const allItemsFilled = formData.items.every(item => {
+      if (item.description.trim() === '') return true // Empty items are ok if not used
+      return item.quantity > 0 && item.price > 0
+    })
+    if (!allItemsFilled) {
+      newErrors.items = 'All added items must have quantity and price filled in'
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    }
+
+    setErrors({})
     onGenerate({ ...formData, total: calculateTotal() })
   }
 
@@ -79,20 +135,54 @@ export default function InvoiceGenerator({ onGenerate }) {
         </div>
 
         <form onSubmit={handleSubmit} className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
+          {/* Error Summary */}
+          {Object.keys(errors).length > 0 && (
+            <div className="p-4 bg-red-50 border border-red-200 rounded-xl">
+              <h4 className="font-heading font-bold text-red-700 mb-2">Please fix the following errors:</h4>
+              <ul className="space-y-1">
+                {errors.invoiceNumber && <li className="text-sm text-red-600">• {errors.invoiceNumber}</li>}
+                {errors.customerName && <li className="text-sm text-red-600">• {errors.customerName}</li>}
+                {errors.customerAddress && <li className="text-sm text-red-600">• {errors.customerAddress}</li>}
+                {errors.items && <li className="text-sm text-red-600">• {errors.items}</li>}
+                {errors.item && <li className="text-sm text-red-600">• {errors.item}</li>}
+              </ul>
+            </div>
+          )}
+
           {/* Invoice Info */}
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
               <label className="block text-xs sm:text-sm font-semibold text-secondary mb-2 font-heading">
                 Invoice Number
               </label>
-              <input
-                type="text"
-                name="invoiceNumber"
-                value={formData.invoiceNumber}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                required
-              />
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  name="invoiceNumber"
+                  value={formData.invoiceNumber}
+                  onChange={handleInputChange}
+                  className={`flex-1 px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none transition-all ${
+                    errors.invoiceNumber ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary'
+                  }`}
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    const newInvNumber = generateInvoiceNumber()
+                    setFormData(prev => ({ ...prev, invoiceNumber: newInvNumber }))
+                    setErrors(prev => {
+                      const newErrors = { ...prev }
+                      delete newErrors.invoiceNumber
+                      return newErrors
+                    })
+                  }}
+                  className="px-4 py-3 sm:px-4 sm:py-3 bg-primary text-white rounded-xl font-heading font-semibold text-xs sm:text-sm hover:bg-primary/90 transition-all whitespace-nowrap"
+                  title="Regenerate invoice number"
+                >
+                  New
+                </button>
+              </div>
             </div>
             <div>
               <label className="block text-xs sm:text-sm font-semibold text-secondary mb-2 font-heading">
@@ -124,7 +214,9 @@ export default function InvoiceGenerator({ onGenerate }) {
                   name="customerName"
                   value={formData.customerName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className={`w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none transition-all ${
+                    errors.customerName ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary'
+                  }`}
                   required
                 />
               </div>
@@ -161,7 +253,9 @@ export default function InvoiceGenerator({ onGenerate }) {
                   name="customerAddress"
                   value={formData.customerAddress}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                  className={`w-full px-4 py-3 sm:px-4 sm:py-3 text-base sm:text-base rounded-xl border focus:ring-2 focus:ring-primary/20 outline-none transition-all ${
+                    errors.customerAddress ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-primary'
+                  }`}
                   required
                 />
               </div>
@@ -182,6 +276,11 @@ export default function InvoiceGenerator({ onGenerate }) {
                 + Add Item
               </button>
             </div>
+            {errors.item && (
+              <div className="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-sm text-yellow-700">{errors.item}</p>
+              </div>
+            )}
             <div className="space-y-4">
               {formData.items.map((item, index) => (
                 <div key={index} className="flex flex-col gap-3 p-3 sm:p-4 bg-light rounded-xl">
