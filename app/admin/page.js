@@ -72,49 +72,48 @@ export default function AdminDashboard() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-light via-white to-light">
             {/* Header */}
-            <div className="bg-white border-b border-border print:hidden">
-                <div className="container mx-auto px-4 lg:px-8 py-4 sm:py-6">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                        <div className="flex items-center gap-4">
-                            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                                <div className="w-12 h-12 relative rounded-lg overflow-hidden bg-black">
-                                    <Image
-                                        src="/logo-white.webp"
-                                        alt="Shift-up Logo"
-                                        width={48}
-                                        height={48}
-                                        className="object-contain p-2"
-                                        priority
-                                    />
-                                </div>
-                                <div>
-                                    <h1 className="text-xl sm:text-2xl font-heading font-bold text-secondary">
-                                        Admin
-                                    </h1>
-                                    <p className="text-gray-600 text-xs sm:text-sm font-manrope">Dashboard</p>
-                                </div>
+            <header className="bg-dark border-b border-white/5 print:hidden">
+                <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+                    <div className="flex items-center justify-between h-[80px] md:h-[85px] lg:h-[95px]">
+                        {/* Logo */}
+                        <div className="flex-shrink-0">
+                            <Link href="/" className="block relative w-40 h-16 sm:w-44 md:w-48 lg:w-52 hover:opacity-80 transition-opacity">
+                                <Image
+                                    src="/logo-white.webp"
+                                    alt="Shift-up Auto Detailing"
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
                             </Link>
                         </div>
-                        <div className="flex items-center gap-3 sm:gap-4 ml-auto">
-                            <Link
-                                href="/"
-                                className="px-4 py-2 rounded-lg font-heading font-semibold text-sm text-gray-600 hover:text-secondary transition-colors"
+
+                        {/* Admin Title */}
+                        <div className="hidden sm:flex items-center gap-2">
+                            <span className="text-white font-heading text-lg md:text-xl font-bold">Admin Dashboard</span>
+                        </div>
+
+                        {/* Right Side - Buttons */}
+                        <div className="flex items-center gap-3 sm:gap-4">
+                            <Link 
+                                href="/" 
+                                className="px-4 py-2 text-white text-xs sm:text-sm font-semibold uppercase tracking-wide hover:text-primary transition-colors"
                             >
-                                Exit
+                                Home
                             </Link>
                             <button
                                 onClick={handleLogout}
-                                className="px-4 py-2 bg-primary text-white rounded-lg font-heading font-semibold text-sm hover:bg-primary/90 transition-all"
+                                className="bg-primary hover:bg-primary/90 text-white px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wide transition-all duration-300 rounded-md"
                             >
                                 Logout
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </header>
 
             {/* Main Content */}
-            <div className="container mx-auto px-4 lg:px-8 py-8">
+            <div className="container mx-auto px-4 lg:px-8 py-12 md:py-16">
                 {!showPreview ? (
                     <InvoiceGenerator onGenerate={handleGenerateInvoice} />
                 ) : (
